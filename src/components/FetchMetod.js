@@ -8,10 +8,14 @@ class FetchMetod extends Component {
   };
 
   componentDidMount() {
+    setTimeout(this.fetchData(), 3000);
+  }
+
+  fetchData = () => {
     fetch("data/words.json")
       .then((response) => response.json())
       .then((data) => this.setState({ words: data.words }));
-  }
+  };
 
   render() {
     const words = this.state.words.map((word) => (
