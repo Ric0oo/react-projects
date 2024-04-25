@@ -1,15 +1,23 @@
 import React, { Component } from "react";
-import "FetchMetod.css";
+// import "FetchMetod.css";
+import Word from "./Word";
 
 class FetchMetod extends Component {
-  state = {};
+  state = {
+    words: [],
+  };
+
+  componentDidMount() {
+    fetch("data/words.json")
+      .then((response) => response.json())
+      .then((data) => this.setState({ words: data.words }));
+  }
+
   render() {
-    return (
-      <div>
-        <h1>Fetch Method</h1>
-        <p>This is a paragraph</p>
-      </div>
-    );
+    const words = this.state.words.map((word) => (
+      <Word key={word.id} english={word.en} polish={word.pl} />
+    ));
+    return <ul>{words}</ul>;
   }
 }
 
