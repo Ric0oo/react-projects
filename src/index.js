@@ -3,13 +3,15 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 // import DynamicData from "./components/DynamicData";
-import FetchMetod from "./components/FetchMetod";
+// import FetchMetod from "./components/FetchMetod";
+import Rest from "./components/Rest";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     {/* <DynamicData /> */}
-    <FetchMetod />
+    {/* <FetchMetod /> */}
+    <Rest />
   </React.StrictMode>
 );
 
