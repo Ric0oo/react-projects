@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import ButtonFetchUsers from "./ButtonFetchUsers";
 import UsersList from "./UsersList";
 
-const API = "https://randomuser.me/api/?results=5";
+const API = "https://randomuser.me/api/?results=1";
 
 class Fetch extends Component {
   state = {
-    users: null,
+    users: [],
   };
 
   handleDataFetch = () => {
@@ -20,10 +20,11 @@ class Fetch extends Component {
       })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
-        this.setState({
-          users: data.results,
-        });
+        const user = data.results;
+
+        this.setState((prevState) => ({
+          users: prevState.users.concat(user),
+        }));
       })
       .catch((error) => console.log(error));
   };

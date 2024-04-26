@@ -1,7 +1,19 @@
 import React from "react";
 
 const ButtonFetchUsers = (props) => {
-  return <button onClick={props.click}>Dodaj użytkowników</button>;
+  return (
+    <button
+      style={{
+        padding: "10px 20px",
+        border: "2px solid black",
+        backgroundColor: "white",
+        margin: "10px",
+      }}
+      onClick={props.click}
+    >
+      Dodaj użytkownika
+    </button>
+  );
 };
 
 export default ButtonFetchUsers;
