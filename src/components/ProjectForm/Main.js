@@ -7,6 +7,21 @@ class Main extends Component {
     email: "",
     pass: "",
     accept: false,
+
+    errors: {
+      username: true,
+      email: true,
+      pass: true,
+      accept: true,
+    },
+  };
+
+  messages = {
+    username_incorect:
+      "Nazwa musi być dłuższa niż 10 znaków i nie może zawierać spacji",
+    email_incorect: "Brak @ w emailu",
+    password_incorect: "Hasło musi mieć 8 znaków",
+    accept_incorect: "Nie potwierdzona zgoda",
   };
 
   handleInputChange = (event) => {
@@ -37,32 +52,47 @@ class Main extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor="name">Twoje imię: </label>
-          <input
-            type="text"
-            id="user"
-            name="username"
-            value={this.state.username}
-            onChange={this.handleInputChange}
-          />
+          <label htmlFor="name">
+            Twoje imię:
+            <input
+              type="text"
+              id="user"
+              name="username"
+              value={this.state.username}
+              onChange={this.handleInputChange}
+            />
+            {this.state.errors.username && (
+              <span>{this.messages.username_incorect}</span>
+            )}
+          </label>
 
-          <label htmlFor="email">Twój adres email: </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={this.state.email}
-            onChange={this.handleInputChange}
-          />
+          <label htmlFor="email">
+            Twój adres email:
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={this.state.email}
+              onChange={this.handleInputChange}
+            />
+            {this.state.errors.email && (
+              <span>{this.messages.email_incorect}</span>
+            )}
+          </label>
 
-          <label htmlFor="password">Twoje Hasło: </label>
-          <input
-            type="password"
-            id="password"
-            name="pass"
-            value={this.state.pass}
-            onChange={this.handleInputChange}
-          />
+          <label htmlFor="password">
+            Twoje Hasło:
+            <input
+              type="password"
+              id="password"
+              name="pass"
+              value={this.state.pass}
+              onChange={this.handleInputChange}
+            />
+            {this.state.errors.pass && (
+              <span>{this.messages.password_incorect}</span>
+            )}
+          </label>
 
           <label htmlFor="accept">
             <input
@@ -74,6 +104,9 @@ class Main extends Component {
             />
             Wyrażam zgodę
           </label>
+          {this.state.errors.accept && (
+            <span>{this.messages.accept_incorect}</span>
+          )}
 
           <button type="submit">Zaloguj się</button>
         </form>
