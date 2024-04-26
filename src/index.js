@@ -2,16 +2,18 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
+import Fetch from "./components/Fetch";
 // import DynamicData from "./components/DynamicData";
-// import FetchMetod from "./components/FetchMetod";
-import Rest from "./components/Rest";
+// import JSON from "./components/JSON";
+// import Rest from "./components/Rest";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     {/* <DynamicData /> */}
-    {/* <FetchMetod /> */}
-    <Rest />
+    {/* <JSON /> */}
+    {/* <Rest /> */}
+    <Fetch />
   </React.StrictMode>
 );
 
