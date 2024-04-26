@@ -2,7 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import Fetch from "./components/Fetch";
+import Main from "./components/ProjectForm/Main";
+// import Fetch from "./components/Fetch";
 // import DynamicData from "./components/DynamicData";
 // import JSON from "./components/JSON";
 // import Rest from "./components/Rest";
@@ -13,7 +14,8 @@ root.render(
     {/* <DynamicData /> */}
     {/* <JSON /> */}
     {/* <Rest /> */}
-    <Fetch />
+    {/* <Fetch /> */}
+    <Main />
   </React.StrictMode>
 );
 
