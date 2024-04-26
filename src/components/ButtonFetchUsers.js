@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 
-const ButtonFetchUsers = () => {
-  return <button>Dodaj użytkowników</button>;
+const ButtonFetchUsers = (props) => {
+  return <button onClick={props.click}>Dodaj użytkowników</button>;
 };
 
 export default ButtonFetchUsers;
