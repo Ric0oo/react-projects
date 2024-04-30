@@ -9,10 +9,10 @@ class Main extends Component {
     accept: false,
 
     errors: {
-      username: true,
-      email: true,
-      pass: true,
-      accept: true,
+      username: false,
+      email: false,
+      pass: false,
+      accept: false,
     },
   };
 
@@ -45,7 +45,30 @@ class Main extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Działa");
+    if (true) {
+      this.setState({
+        username: "",
+        email: "",
+        pass: "",
+        accept: false,
+
+        errors: {
+          username: false,
+          email: false,
+          pass: false,
+          accept: false,
+        },
+      });
+    } else {
+      this.setState({
+        errors: {
+          username: true,
+          email: true,
+          pass: true,
+          accept: true,
+        },
+      });
+    }
   };
 
   render() {
