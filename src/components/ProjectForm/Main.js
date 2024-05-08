@@ -30,7 +30,6 @@ class Main extends Component {
     const type = e.target.type;
     if (type === "text" || type === "password" || type === "email") {
       const value = e.target.value;
-      // const checked = e.target.checked;
       this.setState({
         [name]: value,
       });
@@ -46,7 +45,6 @@ class Main extends Component {
     e.preventDefault();
 
     const validation = this.formValidation();
-    // console.log(validation)
 
     if (validation.correct) {
       this.setState({
@@ -76,8 +74,6 @@ class Main extends Component {
   };
 
   formValidation() {
-    // true - ok
-    // false - zle
     let username = false;
     let email = false;
     let password = false;
@@ -95,7 +91,7 @@ class Main extends Component {
       email = true;
     }
 
-    if (this.state.pass.length === 8) {
+    if (this.state.pass.length !== 8) {
       password = true;
     }
 
@@ -117,7 +113,6 @@ class Main extends Component {
   }
 
   componentDidUpdate() {
-    console.log("update");
     if (this.state.message !== "") {
       setTimeout(
         () =>
